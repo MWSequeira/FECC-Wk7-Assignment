@@ -134,8 +134,8 @@ function repeatGreeting(word, n) {
     }
     return str;
 }
-console.log(repeatGreeting("Heeyaw", 5));
-
+console.log(repeatGreeting("Hiya", 2)); // testing two different words and numbers
+console.log(repeatGreeting("Hola-", 5));
 
 console.log("----------");
 console.log("QUESTION 8");
@@ -143,3 +143,133 @@ console.log("QUESTION 8");
 INSTRUCTIONS 
 Write a function that takes two parameters, firstName and lastName, and returns a full name. The full name should be the first and the last name separated by a space.
 */
+function fullName(firstName, lastName) {
+    return `${firstName} ${lastName}`; // using object literals because it's easier to add the space in between
+}
+console.log("Michele", "Sequeira"); // testing two different names
+console.log("Donald", "Duck");
+
+
+console.log("----------");
+console.log("QUESTION 9");
+/*
+INSTRUCTIONS 
+Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
+*/
+function greaterThan100(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i]; // add all the elements in the array together
+    }
+    if (sum > 100) {
+        return true;
+    }
+    if (sum <= 100) {
+        return false;
+    }
+}
+
+let testArray1 = [55, 2, 18, 28, 36];
+let testArray2 = [3, 6, 9, 2, 1]
+console.log(greaterThan100(testArray1));
+console.log(greaterThan100(newNames));
+console.log(greaterThan100(testArray2));
+
+
+console.log("----------");
+console.log("QUESTION 10");
+/*
+INSTRUCTIONS 
+Write a function that takes an array of numbers and returns the average of all the elements in the array.
+*/
+function averageOfNumArray(array) {
+    let sum = 0; // this is the same code as above to add all the elements in the array together
+    for (let i = 0; i < array.length; i++) {
+        sum = sum + array[i];
+    }
+    return sum / array.length; // divide the sum by the number of elements
+}
+console.log(averageOfNumArray(testArray1)); // testing three different arrays
+console.log(averageOfNumArray(newNames));
+console.log(averageOfNumArray(testArray2));
+
+
+console.log("----------");
+console.log("QUESTION 11");
+/*
+INSTRUCTIONS 
+Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+*/
+
+function averageIsLarger (array1, array2) {
+    if (averageOfNumArray(array1) > averageOfNumArray(array2)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(averageIsLarger(testArray1, testArray2)); // expected output true
+console.log(averageIsLarger(testArray2, testArray1)); // expected output false
+
+let testArray3 = [4, 0, 8]; //creating a new test array to test the result when the averages are equal
+console.log(averageOfNumArray(testArray3)); // expected output 4
+console.log(averageIsLarger(newNames, testArray3)); // expected output false
+
+
+console.log("----------");
+console.log("QUESTION 12");
+/*
+INSTRUCTIONS 
+Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
+*/
+function willBuyDrink(isHotOutside, moneyInPocket) {
+    if (isHotOutside === true && moneyInPocket > 10.5) {
+        return true;
+    } else {
+        return false;
+    }
+}
+let isHotOutside = true; // first test case
+let moneyInPocket = 11;
+console.log(willBuyDrink(isHotOutside, moneyInPocket)); //expected output true
+
+isHotOutside = false; // second test case
+moneyInPocket = 11;
+console.log(willBuyDrink(isHotOutside, moneyInPocket)); //expected output false
+
+isHotOutside = true; // third test case
+moneyInPocket = 10;
+console.log(willBuyDrink(isHotOutside, moneyInPocket)); //expected output false
+
+isHotOutside = false; // fourth test case
+moneyInPocket = 10;
+console.log(willBuyDrink(isHotOutside, moneyInPocket)); //expected output false
+
+
+console.log("----------");
+console.log("QUESTION 13");
+/*
+INSTRUCTIONS 
+Create a function of your own that solves a problem. In comments, write what the function does and why you created it.
+*/
+// I want to create a function that takes an array of any length and returns a two-element array with the minimum and maximum of the input array. I plan to use this function in a Monte Carlo simulation project I'm creating.
+
+function arrayMinMax(array) {
+    let min = array[0];
+    let max = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (min > array[i]) {
+            min = array[i];
+        }
+        if (max < array[i]) {
+            max = array[i];
+        }
+    }
+    return [min, max];
+}
+console.log(arrayMinMax(testArray1));
+console.log(arrayMinMax(testArray2));
+console.log(arrayMinMax(testArray3));
+console.log(arrayMinMax(newNames));
+let testArray4 = [-5, -2, -10, 18, 24, 3, 66, 4]; // creating a new test array to test for negative numbers as well.
+console.log(arrayMinMax(testArray4));
