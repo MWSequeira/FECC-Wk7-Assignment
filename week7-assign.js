@@ -16,12 +16,12 @@ Create an array called ages that contains the following values: 3, 9, 23, 64, 2,
 
 let ages = [3, 9, 23, 64, 2, 8, 28, 93]
 // creating a function to find the difference between the first and last element
-const diff = (array) => array[array.length - 1] - array[0];
-console.log(`The difference in ages is ${diff(ages)}.`);
+const diffLastMinusFirst = (array) => array[array.length - 1] - array[0];
+console.log(`The difference in ages is ${diffLastMinusFirst(ages)}.`);
 
 // adding another element to the end of the array and finding the difference between that element and the first one using the function created above.
 ages.push(58);
-console.log(`The difference in ages is now ${diff(ages)}.`);
+console.log(`The difference in ages is now ${diffLastMinusFirst(ages)}.`);
 
 // creating a function to find the average of the elements of a numerical array
 function average(array) {
@@ -109,4 +109,37 @@ console.log("QUESTION 6");
 /*
 INSTRUCTIONS 
 Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array.
+*/
+
+function sumArray(array) {
+    let sum = 0;
+    for (let i = 0; i < newNames.length; i++) {
+        sum += array[i];  
+    }
+    return sum;
+}
+console.log(newNames);
+console.log(sumArray(newNames));
+
+console.log("----------");
+console.log("QUESTION 7");
+/*
+INSTRUCTIONS 
+Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in 'Hello' and 3, I would expect the function to return 'HelloHelloHello').
+*/
+function repeatGreeting(word, n) {
+    let str = ""; // start with an empty string; reusing this code from above
+    for (let i = 0; i < n; i++) {
+        str += `${word}`; // using object literals because it's easier.
+    }
+    return str;
+}
+console.log(repeatGreeting("Heeyaw", 5));
+
+
+console.log("----------");
+console.log("QUESTION 8");
+/*
+INSTRUCTIONS 
+Write a function that takes two parameters, firstName and lastName, and returns a full name. The full name should be the first and the last name separated by a space.
 */
